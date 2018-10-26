@@ -24,18 +24,18 @@ describe('rendering', () => {
   });
 
   it('renders the correct title', () => {
-    expect(wrapper.find('.log-entry--title').first().text()).toBe(title)
+    expect(wrapper.find('.log-entry--title--value').first().text()).toBe(title)
   });
 
   it('renders the correct start time', () => {
-    expect(wrapper.find('.log-entry--start-at').first().text()).toBe(format(startAt, 'hh:mm a'))
+    expect(wrapper.find('.log-entry--start-at--value').first().text()).toBe(format(startAt, 'hh:mm a'))
   });
 
   it('renders the correct start time', () => {
-    expect(wrapper.find('.log-entry--end-at').first().text()).toBe(format(endAt, 'hh:mm a'))
+    expect(wrapper.find('.log-entry--end-at--value').first().text()).toBe(format(endAt, 'hh:mm a'))
   });
 
   it('renders the correct duration', () => {
-    expect(wrapper.find('.log-entry--duration').first().text()).toBe('120 minutes');
+    expect(wrapper.find('.log-entry--duration--value').first().text()).toBe('120 min');
   });
 })

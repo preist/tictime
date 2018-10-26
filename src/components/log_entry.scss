@@ -1,0 +1,41 @@
+.log-entry {
+  background-color: white;
+  text-align: left;
+  padding: 20px;
+  border-bottom: 1px solid lighten(gray, 35%);
+
+  &--title {
+    padding: 5px 0;
+
+    &--value {
+      font-size: 18px;
+      margin: 0;
+    }
+  }
+
+  &--category {
+    padding: 2px 0;
+    margin-bottom: 10px;
+
+    &--value {
+      font-size: 13px;
+      padding: 1px 8px;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+  }
+
+  &--time {
+    display: flex;
+    justify-content: space-between;
+
+    &--range,
+    &--duration {
+      color: gray;
+    }
+
+    &--duration {
+      font-weight: bold;
+    }
+  }
+}
