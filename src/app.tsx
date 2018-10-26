@@ -1,6 +1,9 @@
 import * as React from 'react';
 
+import {subHours} from 'date-fns';
+
 import 'app.scss';
+import LogEntry from 'components/log_entry';
 
 class App extends React.Component {
   public render() {
@@ -12,6 +15,13 @@ class App extends React.Component {
         <p className="app-description">
           A time tracking tool
         </p>
+
+        <LogEntry
+          title="Did something good"
+          category={2}
+          startAt={subHours(new Date(), 1)}
+          endAt={new Date(new Date())}
+        />
       </div>
     );
   }
