@@ -4,8 +4,12 @@
   padding: 20px;
   border-bottom: 1px solid lighten(gray, 35%);
 
+  &:first-child {
+    border-top: 1px solid lighten(gray, 35%);
+  }
+
   &--title {
-    padding: 5px 0;
+    margin-bottom: 10px;
 
     &--value {
       font-size: 18px;
@@ -28,6 +32,7 @@
   &--time {
     display: flex;
     justify-content: space-between;
+    font-size: 13px;
 
     &--range,
     &--duration {
