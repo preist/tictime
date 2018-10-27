@@ -41,7 +41,7 @@ export default class LogEntry extends React.Component<ILogEntryProps> {
     const {startAt, endAt} = this.props;
 
     return (
-      <span className="log-entry--duration">{differenceInMinutes(endAt, startAt)} min</span>
+      <span className="log-entry--duration--value">{differenceInMinutes(endAt, startAt)} min</span>
     )
   }
 

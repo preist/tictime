@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { format, subHours } from 'date-fns';
+import { format, subMinutes } from 'date-fns';
 import { shallow } from 'enzyme';
 import * as Faker from 'faker';
 
@@ -8,7 +8,8 @@ import LogEntry from 'components/log_entry';
 
 describe('rendering', () => {
   const title = Faker.lorem.sentence();
-  const startAt = subHours(new Date(), 2);
+  const minutes = Math.floor(Math.random() * Math.floor(60));
+  const startAt = subMinutes(new Date(), minutes);
   const endAt = new Date();
   const wrapper = shallow(
     <LogEntry
@@ -36,6 +37,6 @@ describe('rendering', () => {
   });
 
   it('renders the correct duration', () => {
-    expect(wrapper.find('.log-entry--duration--value').first().text()).toBe('120 min');
+    expect(wrapper.find('.log-entry--duration--value').first().text()).toBe(`${minutes} min`);
   });
 })
