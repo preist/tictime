@@ -1,5 +1,4 @@
 .log-entry {
-  background-color: white;
   text-align: left;
   padding: 20px;
   border-bottom: 1px solid lighten(gray, 35%);
@@ -13,6 +12,7 @@
 
     &--value {
       font-size: 18px;
+      line-height: 1.2;
       margin: 0;
     }
   }
@@ -23,7 +23,8 @@
 
     &--value {
       font-size: 13px;
-      padding: 1px 8px;
+      color: gray;
+      padding: 2px 10px;
       border: 1px solid gray;
       border-radius: 5px;
     }
@@ -32,10 +33,10 @@
   &--time {
     display: flex;
     justify-content: space-between;
-    font-size: 13px;
 
     &--range,
     &--duration {
+      font-size: 13px;
       color: gray;
     }
 
