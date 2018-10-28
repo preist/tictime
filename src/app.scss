@@ -1,20 +1,15 @@
 @import "variables";
 
 .app {
-  text-align: center;
+  background-color: $color-white;
 }
 
 .app-header {
   background-color: $color-black;
-  padding: 20px;
+  padding: 10px 20px;
   color: $color-white;
 }
 
 .app-title {
   font-size: 1.6em;
 }
-
-.app-description {
-  font-size: large;
-}
-

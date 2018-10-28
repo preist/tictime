@@ -1,0 +1,47 @@
+.log-entry {
+  text-align: left;
+  padding: 20px;
+  border-bottom: 1px solid lighten(gray, 35%);
+
+  &:first-child {
+    border-top: 1px solid lighten(gray, 35%);
+  }
+
+  &--title {
+    margin-bottom: 10px;
+
+    &--value {
+      font-size: 18px;
+      line-height: 1.2;
+      margin: 0;
+    }
+  }
+
+  &--category {
+    padding: 2px 0;
+    margin-bottom: 10px;
+
+    &--value {
+      font-size: 13px;
+      color: gray;
+      padding: 2px 10px;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+  }
+
+  &--time {
+    display: flex;
+    justify-content: space-between;
+
+    &--range,
+    &--duration {
+      font-size: 13px;
+      color: gray;
+    }
+
+    &--duration {
+      font-weight: bold;
+    }
+  }
+}
