@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { differenceInMinutes, format } from 'date-fns';
+import { differenceInHours, differenceInMinutes, format } from 'date-fns';
 
 import { CATEGORIES } from 'components/category';
 import 'components/log_entry.scss';
@@ -30,19 +30,24 @@ export default class LogEntry extends React.Component<ILogEntryProps> {
             <span className="log-entry--end-at--value">{this.renderTime(endAt)}</span>
           </div>
           <div className="log-entry--time--duration">
-            {this.renderDuration()}
+            <time className="log-entry--duration--value">{this.renderDuration()}</time>
           </div>
         </div>
       </div>
     );
   }
 
-  private renderDuration(): JSX.Element {
+  private renderDuration():string {
     const {startAt, endAt} = this.props;
+    const hours: number = differenceInHours(endAt, startAt);
+    const minutes: number = differenceInMinutes(endAt, startAt) - hours * 60;
 
-    return (
-      <span className="log-entry--duration--value">{differenceInMinutes(endAt, startAt)} min</span>
-    )
+    const durationInWords: string = [
+      (hours !== 0) ? `${hours} hour${(hours !== 1) ? 's' : ''}` : null,
+      (minutes !== 0) ? `${minutes} minute${(minutes !== 1) ? 's' : ''}` : null
+    ].filter(Boolean).join(' ');
+
+    return durationInWords;
   }
 
   private renderCategory(): JSX.Element {
