@@ -37,19 +37,6 @@ export default class LogEntry extends React.Component<ILogEntryProps> {
     );
   }
 
-  private renderDuration():string {
-    const {startAt, endAt} = this.props;
-    const hours: number = differenceInHours(endAt, startAt);
-    const minutes: number = differenceInMinutes(endAt, startAt) - hours * 60;
-
-    const durationInWords: string = [
-      (hours !== 0) ? `${hours} hour${(hours !== 1) ? 's' : ''}` : null,
-      (minutes !== 0) ? `${minutes} minute${(minutes !== 1) ? 's' : ''}` : null
-    ].filter(Boolean).join(' ');
-
-    return durationInWords;
-  }
-
   private renderCategory(): JSX.Element {
     const logCategory = CATEGORIES[this.props.category];
 
@@ -64,5 +51,18 @@ export default class LogEntry extends React.Component<ILogEntryProps> {
         {format(t, "hh:mm a")}
       </time>
     )
+  }
+
+  private renderDuration():string {
+    const {startAt, endAt} = this.props;
+    const hours: number = differenceInHours(endAt, startAt);
+    const minutes: number = differenceInMinutes(endAt, startAt) - hours * 60;
+
+    const durationInWords: string = [
+      (hours !== 0) ? `${hours} hour${(hours !== 1) ? 's' : ''}` : null,
+      (minutes !== 0) ? `${minutes} minute${(minutes !== 1) ? 's' : ''}` : null
+    ].filter(Boolean).join(' ');
+
+    return durationInWords;
   }
 }
